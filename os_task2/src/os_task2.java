@@ -11,12 +11,8 @@ import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
 public class os_task2 {
 
-	/**
-	 * @param args
-	 */
 	static ArrayList<Integer> numbers = new ArrayList<Integer>();
 	
 	public static void main(String[] args) {
@@ -38,7 +34,11 @@ public class os_task2 {
 				numbers.add(Integer.parseInt(matcher.group()));
 		}
 
-		Collections.sort(numbers);
+		try {
+			Collections.sort(numbers);
+		} catch (OutOfMemoryError e) {
+			e.printStackTrace();
+		}
 		
 		String res = "";
 		for (int i=0; i < numbers.size(); ++i) {
