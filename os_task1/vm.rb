@@ -1,3 +1,5 @@
+$zapp, $zam1, $zam2, $vzap1, $vib, $chist, $pusk, $IR, $IP
+
 $table_kom = {
   '00' => [1, 0, 0, 0],
   '11' => [0, 1, 1, 0],
@@ -61,12 +63,13 @@ while i < prog.size
   cmds[j] = [kop, adr]
   j+=1
 end
-
-#
-#ip = 0
-#while true
-#  $kop = commands[ip][0]
-#  $adr = commands[ip][1]
-#  dekkom $kop
-#
-#end
+$IP = 0
+$IR = 0
+$pusk = 1
+while true
+  $kop = cmds[$IP][0]
+  $adr = cmds[$IP][1]
+  dekkom $kop
+  
+  
+end
