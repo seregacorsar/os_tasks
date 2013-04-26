@@ -2,10 +2,10 @@ $p, $zapp, $zam1, $zam2, $vzap1, $vib, $chist, $op, $ron, $rvv, $IR, $IP, $IA =
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
 
 $table_kom = {
-  '00' => [1, 0, 0, 0],
+  '0' => [1, 0, 0, 0],
   '11' => [0, 1, 1, 0],
   '15' => [1, 1 ,1 ,0],
-	'02' => [0, 2, 0, 0],
+	'2' => [0, 2, 0, 0],
 	'21' => [0, 1, 2, 0],
 	'25' => [1, 1, 2, 0],
 	'31' => [0, 1, 3, 0],
@@ -16,7 +16,9 @@ $table_kom = {
 	'f5' => [1, 4, 15, 0],
 	'ff' => [1, 4, 15, 0]
 }
-# puts table_kom['21'][3]
+# var = 2.to_s(16)
+# p var
+# puts $table_kom[var][3]
 
 def dekkom(arg)
 #puts "arg = #{arg.to_s(16)}"
@@ -69,7 +71,7 @@ end
 #$IP = 0
 #$IR = 0
 $pusk = 1
-#while true
+while true
   $kop = cmds[$IP][0]
 #puts "kop = #{$kop}"
   $adr = cmds[$IP][1]
@@ -96,4 +98,6 @@ $pusk = 1
   end
   
 #puts "end"
-#end
+end
+
+cmds.each { |i| print "#{i[1].to_s(16)} " }
